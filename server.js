@@ -5,12 +5,10 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const serverless = require('serverless-http');
 
 // Initialize the Express app
 const app = express();
-
-// Define the port number
-const PORT = 5000;
 
 // Enable Cross-Origin Resource Sharing (CORS)
 var cors = require('cors');
@@ -103,7 +101,5 @@ app.delete('/api/panels/:id/delete', async (req, res) => {
   }
 });
 
-// Start the Express server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// Export the app for Netlify
+module.exports.handler = serverless(app);
