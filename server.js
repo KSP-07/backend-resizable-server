@@ -9,6 +9,9 @@ const mongoose = require('mongoose');
 // Initialize the Express app
 const app = express();
 
+app.get('/', async(req,res)=>{
+  res.send("hello world");
+})
 // Define the port number
 const PORT = 5000;
 
