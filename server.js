@@ -17,7 +17,7 @@ var cors = require('cors');
 app.use(cors());
 
 // Connect to MongoDB database using environment variable for URI
-mongoose.connect(process.env.URI, { useNewUrlParser: true, useUnifiedTopology: true , serverSelectionTimeoutMS: 10000 });
+mongoose.connect('mongodb+srv://KSP1:Testing1@itachi.c1uzmiy.mongodb.net/db', { useNewUrlParser: true, useUnifiedTopology: true , serverSelectionTimeoutMS: 10000 });
 const db = mongoose.connection;
 
 // Log MongoDB connection errors
